@@ -10,14 +10,16 @@ public class Cat : Animal
         maxStamina = 3f;
         currentStamina = maxStamina;
         Name = null; // triggers setter override
-                     
+
+        mover.ApplyMovementStats(walkSpeed, runSpeed);
+
     }
     // Override name setter behavior
     
     public new string Name
     {
         get => petName;
-        protected set => petName = value ?? "Flully";
+        protected set => petName = value ?? "Fluffy";
     }
     public override void Talk()
     {

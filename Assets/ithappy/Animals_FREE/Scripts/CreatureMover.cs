@@ -118,6 +118,18 @@ namespace ithappy.Animals_FREE
             }
         }
 
+        // The below function is not standard for the asset pack. This is only to pass on the Animal class stats into CreatureMover (bypass what is being set in Inspector)
+
+        public void ApplyMovementStats(float walk, float run)
+        {
+            m_WalkSpeed = walk;
+            m_RunSpeed = run;
+
+
+            
+            m_Movement?.SetStats(walk, run, m_RotateSpeed, m_JumpHeight, m_Space);
+        }
+
         #region Handlers
         private class MovementHandler
         {

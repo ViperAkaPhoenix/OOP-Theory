@@ -5,15 +5,23 @@ public class GameManager : MonoBehaviour
 {
     public GameObject chicken;
     private Animal chickenAnimal;
-    private CreatureMover chickenMover;
-    
+
+    public GameObject dog;
+    private Animal dogAnimal;
+
+    public GameObject cat;
+    private Animal catAnimal;
+    //private CreatureMover chickenMover;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         chickenAnimal = chicken.GetComponent<Animal>();
-        chickenMover = chicken.GetComponent<CreatureMover>();
-
         chickenAnimal.Talk();
+        dogAnimal = dog.GetComponent<Animal>();
+        dogAnimal.Talk();
+        catAnimal = cat.GetComponent<Animal>();
+        catAnimal.Talk();
     }
 
     // Update is called once per frame
@@ -22,11 +30,28 @@ public class GameManager : MonoBehaviour
         if (chickenAnimal.Stamina > 0)
         {
             chickenAnimal.Run();
-            //Debug.Log("Is running, stamina left" + chickenAnimal.Stamina);
         }
         else
         {
             chickenAnimal.Walk();
+        }
+
+        if (dogAnimal.Stamina > 0)
+        {
+            dogAnimal.Run();
+        }
+        else
+        {
+            dogAnimal.Walk();
+        }
+
+        if (catAnimal.Stamina > 0)
+        {
+            catAnimal.Run();
+        }
+        else
+        {
+            catAnimal.Walk();
         }
     }
 }

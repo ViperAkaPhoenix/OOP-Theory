@@ -10,6 +10,8 @@ public class Chicken : Animal
         maxStamina = 2f;
         currentStamina = maxStamina;
         Name = null;
+
+        mover.ApplyMovementStats(walkSpeed, runSpeed);
     }
     public new string Name
     {

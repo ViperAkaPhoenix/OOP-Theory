@@ -34,7 +34,7 @@ public class Animal : MonoBehaviour
     public virtual void Stop()
     {
         mover.SetInput(
-            axis: Vector2.zero,
+            axis: Vector3.zero,
             target: transform.position + transform.forward,
             isRun: false,
             isJump: false
@@ -65,7 +65,7 @@ public class Animal : MonoBehaviour
                 );
             
             currentStamina = currentStamina - 0.01f;
-            Debug.Log($"{Name} is running, stamina left: " + currentStamina);
+            //Debug.Log($"{Name} is running, stamina left: " + currentStamina);
         }
         else
         {
@@ -76,4 +76,5 @@ public class Animal : MonoBehaviour
     {
         Debug.Log($"{Name} makes a sound.");
     }
+
 }

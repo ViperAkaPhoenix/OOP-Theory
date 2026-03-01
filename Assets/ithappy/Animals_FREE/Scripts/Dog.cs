@@ -10,6 +10,8 @@ public class Dog : Animal
         maxStamina = 5f;
         currentStamina = maxStamina;
         Name = null;
+
+        mover.ApplyMovementStats(walkSpeed, runSpeed);
     }
     public new string Name
     {
