@@ -1,8 +1,10 @@
 using UnityEngine;
 public class Chicken : Animal
 {
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake(); // initializes CreaterMover in the parent class
+
         walkSpeed = 1f;
         runSpeed = 2f;
         maxStamina = 2f;

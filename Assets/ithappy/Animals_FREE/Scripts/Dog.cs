@@ -1,8 +1,10 @@
 using UnityEngine;
 public class Dog : Animal
 {
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake(); // initializes CreaterMover in the parent class
+
         walkSpeed = 2f;
         runSpeed = 3f;
         maxStamina = 5f;
