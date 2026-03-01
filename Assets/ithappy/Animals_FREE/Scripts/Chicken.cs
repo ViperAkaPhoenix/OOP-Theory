@@ -1,4 +1,5 @@
 using UnityEngine;
+// Inheritance
 public class Chicken : Animal
 {
     protected override void Awake()
@@ -9,17 +10,17 @@ public class Chicken : Animal
         runSpeed = 2f;
         maxStamina = 2f;
         currentStamina = maxStamina;
-        Name = null;
+        friendlyName = null;
 
         mover.ApplyMovementStats(walkSpeed, runSpeed);
     }
-    public new string Name
+    public new string friendlyName
     {
-        get => name;
-        protected set => name = value ?? "Charles";
+        get => petName;
+        set => petName = string.IsNullOrEmpty(value) ? "Charles" : value;
     }
     public override void Talk()
     {
-        Debug.Log($"{Name}: Cluck");
+        Debug.Log($"{friendlyName}: Cluck");
     }
 }

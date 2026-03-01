@@ -11,15 +11,20 @@ public class GameManager : MonoBehaviour
 
     public GameObject cat;
     private Animal catAnimal;
-    //private CreatureMover chickenMover;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+        chicken.GetComponent<Chicken>().friendlyName = GlobalInfo.Instance.chickenName;
         chickenAnimal = chicken.GetComponent<Animal>();
         chickenAnimal.Talk();
+
+        dog.GetComponent<Dog>().friendlyName = GlobalInfo.Instance.dogName;
         dogAnimal = dog.GetComponent<Animal>();
         dogAnimal.Talk();
+
+        cat.GetComponent<Cat>().friendlyName = GlobalInfo.Instance.catName;
         catAnimal = cat.GetComponent<Animal>();
         catAnimal.Talk();
     }

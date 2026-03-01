@@ -20,10 +20,10 @@ public class Animal : MonoBehaviour
     }
 
     // Public property with protected setter
-    public string Name
+    public string friendlyName
     {
         get => petName;
-        protected set => petName = value;
+        set => petName = value;
     }
 
     public float Stamina
@@ -40,7 +40,7 @@ public class Animal : MonoBehaviour
             isJump: false
             );
         
-        Debug.Log($"{Name} stopped.");
+        Debug.Log($"{friendlyName} stopped.");
     }
     public virtual void Walk()
     {
@@ -51,7 +51,7 @@ public class Animal : MonoBehaviour
             isJump: false
             );
 
-        //Debug.Log($"{Name} is walking at speed {walkSpeed}.");
+        //Debug.Log($"{friendlyName} is walking at speed {walkSpeed}.");
     }
     public virtual void Run()
     {
@@ -65,16 +65,16 @@ public class Animal : MonoBehaviour
                 );
             
             currentStamina = currentStamina - 0.01f;
-            //Debug.Log($"{Name} is running, stamina left: " + currentStamina);
+            //Debug.Log($"{friendlyName} is running, stamina left: " + currentStamina);
         }
         else
         {
-            Debug.Log($"{Name} is too tired to run.");
+            Debug.Log($"{friendlyName} is too tired to run.");
         }
     }
     public virtual void Talk()
     {
-        Debug.Log($"{Name} makes a sound.");
+        Debug.Log($"{friendlyName} makes a sound.");
     }
 
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+// Inheritance
 public class Dog : Animal
 {
     protected override void Awake()
@@ -9,17 +10,17 @@ public class Dog : Animal
         runSpeed = 3f;
         maxStamina = 5f;
         currentStamina = maxStamina;
-        Name = null;
+        friendlyName = null;
 
         mover.ApplyMovementStats(walkSpeed, runSpeed);
     }
-    public new string Name
+    public new string friendlyName
     {
-        get => name;
-        protected set => name = value ?? "Lucky";
+        get => petName;
+        set => petName = string.IsNullOrEmpty(value) ? "Lucky" : value;
     }
     public override void Talk()
     {
-        Debug.Log($"{Name}: Woof");
+        Debug.Log($"{friendlyName}: Woof");
     }
 }

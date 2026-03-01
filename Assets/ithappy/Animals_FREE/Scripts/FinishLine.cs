@@ -7,7 +7,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.CompareTag("Animal") && hasAnyoneWon == false)
         {
-            Debug.Log(other.gameObject.name.ToString() + " has won the race!");
+            Debug.Log(other.gameObject.GetComponent<Animal>().friendlyName + " has won the race!");
             hasAnyoneWon = true;
         }
     }
